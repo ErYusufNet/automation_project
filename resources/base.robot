@@ -1,5 +1,6 @@
 *** Settings ***
 Library     SeleniumLibrary
+
 Resource    ../variables/env_variables.robot
 
 
