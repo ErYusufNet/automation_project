@@ -24,4 +24,5 @@ Go To Login Page
     Select From List By Index    ${DAY}      2
     Select From List By Label    ${MONTH}    January
     Select From List By Label    ${YEAR}     1996
-    Sleep    5
+
+
