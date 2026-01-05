@@ -1,15 +1,18 @@
 *** Settings ***
-Library     SeleniumLibrary
-Resource    ../resources/UI/login_page_keywords.robot
 Resource    ../resources/base.robot
+Resource    ../resources/UI/login_page_keywords.robot
+Resource    ../variables/env_variables.robot
 
 Suite Setup     Open Browser To Base Url
 Suite Teardown  Close All Browser
 
 
-
-
 *** Test Cases ***
-Login
-
-    Go To Login Page
+Register User
+    Set Selenium Speed    0.5
+    &{address}=    Create Address Data
+    ...    ${NAME}      ${LASTNAME}    ${COMPANY}
+    ...    ${ADRESS}    ${ADRESS2}     Canada
+    ...    ${STATE}     ${CITY}        ${ZIPCODE}
+    ...    ${PHONE}
+    Register New User    ${USER_NAME}    ${USER_PASSWORD}    &{address}

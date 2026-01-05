@@ -30,17 +30,27 @@ ${DAY}      xpath=//select[@id='days']
 ${MONTH}    xpath=//select[@id='months']
 ${YEAR}     xpath=//select[@id='years']
 ${CHECKBOX1}    xpath=//input[@id='newsletter']
-${FIRST_NAME}   xpath=//input[@id='first_name']
-${LAST_NAME}    xpath=//input[@id='last_name']
-${COMPANY}      xpath=//input[@id='company']
-${ADRESS1}      xpath=//input[@id='address1']
-${ADRESS2}      xpath=//input[@id='address2']
+${CHECKBOX2}    xpath=//label[@for='optin']
+${FIRST_NAME_LCT}   xpath=//input[@id='first_name']
+${LAST_NAME_LCT}    xpath=//input[@id='last_name']
+${COMPANY_LCT}      xpath=//input[@id='company']
+${ADRESS1_LCT}      xpath=//input[@id='address1']
+${ADRESS2_LCT}      xpath=//input[@id='address2']
 ${COUNTRY}      xpath=//select[@id='country']
-${STATE}        xpath=//input[@id='state']
-${CITY}         xpath=//input[@id='city']
-${ZIPCODE}      xpath=//input[@id='zipcode']
-${PHONE}        xpath=//input[@id='mobile_number']
+${STATE_LCT}        xpath=//input[@id='state']
+${CITY_LCT}         xpath=//input[@id='city']
+${ZIPCODE_LCT}      xpath=//input[@id='zipcode']
+${PHONE_LCT}        xpath=//input[@id='mobile_number']
 ${CREATE_ACCOUNT}     xpath=//button[normalize-space()='Create Account']
+${CONTINUE_LCT}     xpath=//a[@class='btn btn-primary']
+${DELETE_LCT}   xpath=//a[normalize-space()='Delete Account']
+${ACCOUNT_CREATED_MSG}      xpath=//b[normalize-space()='Account Created!']
+${LOGGED_IN_AS}    xpath=//a[contains(normalize-space(),'Logged in as')]
+${ACCOUNT_DELETED}  xpath=//b[normalize-space()='Account Deleted!']
+
+
+
+
 
 
 
