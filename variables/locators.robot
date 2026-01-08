@@ -18,6 +18,10 @@ ${COOKIE}    xpath=//button[p[normalize-space()='İzin ver']]
 ${LOGIN_EMAIL}    xpath=//input[@data-qa='login-email']
 ${LOGIN_PASSWORD}     xpath=//input[@placeholder='Password']
 ${LOGIN_BUTTON}   xpath=//button[normalize-space()='Login']
+${LOGIN_TO_YOUR_ACCOUNT_MSG}    xpath=//div[contains(@class,'login-form')]//h2[normalize-space()='Login to your account']
+
+
+
 
 
 #SIGN UP
@@ -43,7 +47,7 @@ ${ZIPCODE_LCT}      xpath=//input[@id='zipcode']
 ${PHONE_LCT}        xpath=//input[@id='mobile_number']
 ${CREATE_ACCOUNT}     xpath=//button[normalize-space()='Create Account']
 ${CONTINUE_LCT}     xpath=//a[@class='btn btn-primary']
-${DELETE_LCT}   xpath=//a[normalize-space()='Delete Account']
+${DELETE_LCT}    xpath=//a[normalize-space()='Delete Account']
 ${ACCOUNT_CREATED_MSG}      xpath=//b[contains(translate(normalize-space(.),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ'),'ACCOUNT CREATED!')]
 ${LOGGED_IN_AS}    xpath=//a[contains(normalize-space(),'Logged in as')]
 ${ACCOUNT_DELETED}  xpath=//b[normalize-space()='Account Deleted!']
