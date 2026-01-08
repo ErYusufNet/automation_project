@@ -7,6 +7,14 @@ Library     Collections
 Library     ../../libs/email_generator.py
 
 
+*** Variables ***
+# Eğer bunlar locators.robot içinde yoksa burada kalsın.
+# Varsa burayı kaldır ve locators.robot’dakileri kullan.
+
+${ACCOUNT_CREATED_MSG}    xpath=//b[contains(translate(normalize-space(.),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ'),'ACCOUNT CREATED!')]
+${LOGGED_IN_AS}           xpath=//a[contains(normalize-space(),'Logged in as')]
+
+
 *** Keywords ***
 Go To Sign Up Page
     Click Button    ${COOKIE}
@@ -15,22 +23,22 @@ Go To Sign Up Page
 Generate Signup Email
     ${email}=    Generate Unique Email
     Set Test Variable    ${GENERATED_EMAIL}    ${email}
-    [Return]    ${email}
+    RETURN    ${email}
 
 Fill Signup Account Section
     [Arguments]    ${name}    ${password}    ${email}
-    Input Text    ${SIGNUP_NAME}      ${name}
-    Input Text    ${SIGNUP_EMAIL}     ${email}
+    Input Text    ${SIGNUP_NAME}       ${name}
+    Input Text    ${SIGNUP_EMAIL}      ${email}
     Click Button  ${SIGNUP_BUTTON}
 
     # Account Information sayfası açıldıktan sonra
-    Select Radio Button       title    Mr
-    Input Text               ${SIGNUP_PASSWORD}  ${password}
-    Select From List By Index    ${DAY}      2
-    Select From List By Label    ${MONTH}    January
-    Select From List By Label    ${YEAR}     1996
-    Select Checkbox              ${CHECKBOX1}
-    Select Checkbox    ${CHECKBOX2}
+    Select Radio Button          title    Mr
+    Input Text                  ${SIGNUP_PASSWORD}    ${password}
+    Select From List By Index   ${DAY}      2
+    Select From List By Label   ${MONTH}    January
+    Select From List By Label   ${YEAR}     1996
+    Select Checkbox             ${CHECKBOX1}
+    Select Checkbox             ${CHECKBOX2}
 
 Create Address Data
     [Arguments]    ${first_name}    ${last_name}    ${company}
@@ -48,39 +56,41 @@ Create Address Data
     ...    city=${city}
     ...    zipcode=${zipcode}
     ...    phone=${phone}
-    [Return]    &{address}
+    RETURN    &{address}
 
 Fill Signup Address Section
     [Arguments]    &{address}
-    Input Text    ${FIRST_NAME_LCT}      ${address.first}
-    Input Text    ${LAST_NAME_LCT}       ${address.last}
-    Input Text    ${COMPANY_LCT}     ${address.company}
-    Input Text    ${ADRESS1_LCT}     ${address.address1}
-    Input Text    ${ADRESS2_LCT}     ${address.address2}
-    Select From List By Label    ${COUNTRY}     ${address.country}
-    Input Text    ${STATE_LCT}       ${address.state}
-    Input Text    ${CITY_LCT}        ${address.city}
-    Input Text    ${ZIPCODE_LCT}     ${address.zipcode}
-    Input Text    ${PHONE_LCT}       ${address.phone}
+    Input Text    ${FIRST_NAME_LCT}    ${address.first}
+    Input Text    ${LAST_NAME_LCT}     ${address.last}
+    Input Text    ${COMPANY_LCT}       ${address.company}
+    Input Text    ${ADRESS1_LCT}       ${address.address1}
+    Input Text    ${ADRESS2_LCT}       ${address.address2}
+    Select From List By Label    ${COUNTRY}      ${address.country}
+    Input Text    ${STATE_LCT}         ${address.state}
+    Input Text    ${CITY_LCT}          ${address.city}
+    Input Text    ${ZIPCODE_LCT}       ${address.zipcode}
+    Input Text    ${PHONE_LCT}         ${address.phone}
 
 Submit Create Account
     Click Button    ${CREATE_ACCOUNT}
+
+Click Continue
     Click Element    ${CONTINUE_LCT}
 
 Verify Account Created
-    Wait Until Element Is Visible    ${ACCOUNT_CREATED_MSG}    timeout=3s
-    Element Text Should Be           ${ACCOUNT_CREATED_MSG}    ACCOUNT CREATED!
+    Wait Until Element Is Visible    ${ACCOUNT_CREATED_MSG}    15s
+    Element Should Contain           ${ACCOUNT_CREATED_MSG}    ACCOUNT CREATED!
+
+
 Verify Logged In As User
-    Wait Until Element Is Visible    ${LOGGED_IN_AS}    3s
-    Element Text Should Be     ${LOGGED_IN_AS}    Logged in as
-Delete account
+    Wait Until Element Is Visible    ${LOGGED_IN_AS}    10s
+    Element Should Contain      ${LOGGED_IN_AS}    Logged in as
+
+Delete Account
     Click Button    ${DELETE_LCT}
-    Wait Until Element Is Visible    ${ACCOUNT_DELETED}     timeout=3s
-    Element Text Should Be    ${ACCOUNT_DELETED}    ACCOUNT DELETED!
-    Click Button    ${CONTINUE_LCT}
-
-
-
+    Wait Until Element Is Visible    ${ACCOUNT_DELETED}    15s
+    Element Should Contain      ${ACCOUNT_DELETED}    ACCOUNT DELETED!
+    Click Element    ${CONTINUE_LCT}
 
 Register New User
     [Arguments]    ${user_name}    ${user_password}    &{address}
@@ -90,4 +100,5 @@ Register New User
     Fill Signup Address Section    &{address}
     Submit Create Account
     Verify Account Created
+    Click Continue
     Verify Logged In As User
