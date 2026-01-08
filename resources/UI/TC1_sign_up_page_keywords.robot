@@ -7,12 +7,7 @@ Library     Collections
 Library     ../../libs/email_generator.py
 
 
-*** Variables ***
-# Eğer bunlar locators.robot içinde yoksa burada kalsın.
-# Varsa burayı kaldır ve locators.robot’dakileri kullan.
 
-${ACCOUNT_CREATED_MSG}    xpath=//b[contains(translate(normalize-space(.),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ'),'ACCOUNT CREATED!')]
-${LOGGED_IN_AS}           xpath=//a[contains(normalize-space(),'Logged in as')]
 
 
 *** Keywords ***
