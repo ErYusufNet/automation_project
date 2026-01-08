@@ -12,7 +12,7 @@ Library     ../../libs/email_generator.py
 
 *** Keywords ***
 Go To Sign Up Page
-    Click Button    ${COOKIE}
+
     Click Element   ${LOGIN}
 
 Generate Signup Email
