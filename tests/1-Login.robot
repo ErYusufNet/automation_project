@@ -1,6 +1,6 @@
 *** Settings ***
 Resource    ../resources/base.robot
-Resource    ../resources/UI/login_page_keywords.robot
+Resource    ../resources/UI/TC1_sign_up_page_keywords.robot
 Resource    ../variables/env_variables.robot
 
 Suite Setup     Open Browser To Base Url
