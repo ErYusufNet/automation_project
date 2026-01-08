@@ -9,7 +9,7 @@ Suite Teardown  Close All Browser
 
 *** Test Cases ***
 Register User
-    Set Selenium Speed    0.5
+    #Set Selenium Speed    0.1
     &{address}=    Create Address Data
     ...    ${NAME}      ${LASTNAME}    ${COMPANY}
     ...    ${ADRESS}    ${ADRESS2}     Canada
