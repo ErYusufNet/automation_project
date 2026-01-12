@@ -4,7 +4,7 @@ Documentation     TC3 - Login negative test suite.
 Resource          ../resources/base.robot
 Resource          ../resources/UI/TC1_sign_up_page_keywords.robot
 Resource          ../resources/UI/TC2_login_keywords.robot
-Resource          ../resources/UI/TC3_login_incorrect.robot
+Resource          ../resources/UI/TC3_login_incorrect_keywords.robot
 Resource          ../variables/env_variables.robot
 
 Suite Setup       Open Browser To Base Url
