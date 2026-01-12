@@ -1,12 +1,20 @@
 *** Settings ***
-Resource    ../resources/base.robot
-Resource    ../resources/UI/TC1_sign_up_page_keywords.robot
-Resource    ../resources/UI/TC2_login_keywords.robot
-Resource    ../variables/env_variables.robot
+Documentation     TC2 - Login positive (happy path) test suite.
+...               Verifies that a valid user can log in successfully.
+Resource          ../resources/base.robot
+Resource          ../resources/UI/TC1_sign_up_page_keywords.robot
+Resource          ../resources/UI/TC2_login_keywords.robot
+Resource          ../variables/env_variables.robot
 
-Suite Setup     Open Browser To Base Url
-Suite Teardown  Close All Browser
+Suite Setup       Open Browser To Base Url
+#Suite Teardown    Close All Browsers
+
 
 *** Test Cases ***
 TC2 - Login User with correct email and password
-    Login User With Correct Email And Password
+    #Set Selenium Speed    0.5
+    &{address}=    Create Address Data
+    ...    ${NAME}    ${LASTNAME}    ${COMPANY}    ${ADRESS}    ${ADRESS2}
+    ...    Canada    ${STATE}    ${CITY}    ${ZIPCODE}    ${PHONE}
+
+    Login User With Correct Email And Password    ${USER_NAME}    ${USER_PASSWORD}    &{address}
