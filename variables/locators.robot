@@ -23,6 +23,8 @@ ${LOGIN_BUTTON}   xpath=//button[normalize-space()='Login']
 ${LOGIN_TO_YOUR_ACCOUNT_MSG}    xpath=//div[contains(@class,'login-form')]//h2[normalize-space()='Login to your account']
 ${LOGOUT_LCT}    xpath=//a[normalize-space()='Logout']
 
+${INCORRECT_MSG}    xpath=//p[normalize-space()='Your email or password is incorrect!']
+
 
 
 
@@ -55,6 +57,7 @@ ${DELETE_LCT}    xpath=//a[normalize-space()='Delete Account']
 ${ACCOUNT_CREATED_MSG}      xpath=//b[contains(translate(normalize-space(.),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ'),'ACCOUNT CREATED!')]
 ${LOGGED_IN_AS}    xpath=//a[contains(normalize-space(),'Logged in as')]
 ${ACCOUNT_DELETED}  xpath=//b[normalize-space()='Account Deleted!']
+${LOGIN_ACCOUNT_LCT}    xpath=//h2[normalize-space()='Login to your account']
 
 
 
