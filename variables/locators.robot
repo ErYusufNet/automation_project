@@ -7,8 +7,10 @@ ${PRODUCTS}     xpath=//a[normalize-space()='Products']
 ${CART}     xpath=//a[normalize-space()='Cart']
 ${LOGIN}    xpath=//a[normalize-space()='Signup / Login']
 ${CONTACT_US}   xpath=//a[normalize-space()='Contact us']
+${COOKIE_OVERLAY}    css:div.fc-dialog-overlay
 
-${COOKIE}    xpath=//button[p[normalize-space()='İzin ver']]
+${COOKIE}    css:button.fc-cta-consent.fc-primary-button
+
 
 
 
@@ -19,6 +21,8 @@ ${LOGIN_EMAIL}    xpath=//input[@data-qa='login-email']
 ${LOGIN_PASSWORD}     xpath=//input[@placeholder='Password']
 ${LOGIN_BUTTON}   xpath=//button[normalize-space()='Login']
 ${LOGIN_TO_YOUR_ACCOUNT_MSG}    xpath=//div[contains(@class,'login-form')]//h2[normalize-space()='Login to your account']
+${LOGOUT_LCT}    xpath=//a[normalize-space()='Logout']
+
 
 
 
