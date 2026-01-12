@@ -10,7 +10,6 @@ Resource          ../variables/env_variables.robot
 Suite Setup       Open Browser To Base Url
 Suite Teardown    Close All Browsers
 
-
 *** Test Cases ***
 TC3 - Login User With Incorrect Email And Password
     [Documentation]    Attempts login with invalid email/password and verifies the error message is displayed.
