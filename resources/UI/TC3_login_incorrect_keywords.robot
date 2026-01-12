@@ -10,7 +10,6 @@ Library           Collections
 Resource          TC1_sign_up_page_keywords.robot
 Resource          TC2_login_keywords.robot
 
-
 *** Keywords ***
 Login User With Incorrect Email And Password
     [Documentation]    Attempts to log in with invalid credentials and verifies that
