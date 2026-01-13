@@ -1,5 +1,4 @@
 *** Settings ***
-*** Settings ***
 Documentation     TC4 - Logout positive test suite.
 ...               Verifies that a logged-in user can log out and is redirected back to login page.
 Resource          ../resources/base.robot
