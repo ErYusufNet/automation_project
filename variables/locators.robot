@@ -35,7 +35,10 @@ ${INCORRECT_MSG}    xpath=//p[normalize-space()='Your email or password is incor
 ${SIGNUP_NAME}     xpath=//input[@placeholder='Name']
 ${SIGNUP_EMAIL}    xpath=//input[@data-qa='signup-email']
 ${SIGNUP_BUTTON}   xpath=//button[normalize-space()='Signup']
+${VERIFY_NEWUSERSIGNUP_MSG}  xpath=//h2[normalize-space()='New User Signup!']
+${VERIFY_EMAIL_EXIST_MSG}   xpath=//p[normalize-space()='Email Address already exist!']
 ${SIGNUP_PASSWORD}  xpath=//input[@id='password']
+
 ${DAY}      xpath=//select[@id='days']
 ${MONTH}    xpath=//select[@id='months']
 ${YEAR}     xpath=//select[@id='years']
