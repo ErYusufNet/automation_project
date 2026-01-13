@@ -13,6 +13,9 @@ Library           ../../libs/email_generator.py
 Go To Sign Up Page
     [Documentation]    Navigates to Signup/Login page from navbar.
     Click Element    ${LOGIN}
+Verify New User Sign Up Visible
+    Element Should Be Visible   ${VERIFY_NEWUSERSIGNUP_MSG}
+    Element Should Contain    ${VERIFY_NEWUSERSIGNUP_MSG}    New User Signup!
 
 Generate Signup Email
     [Documentation]    Generates a unique email address for signup and stores it as ${GENERATED_EMAIL}.
