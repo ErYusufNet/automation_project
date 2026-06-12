@@ -1,4 +1,5 @@
 *** Settings ***
+
 Documentation     TC1 - Signup / Register flow tests.
 ...               Validates that a new user can register successfully with unique email.
 Resource          ../resources/base.robot
